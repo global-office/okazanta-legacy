@@ -146,6 +146,7 @@ return [
         'not_verified'     => 'Nicht verifiziert',
         'subscriber'       => ':email, abonniert am :date',
         'no_subscriptions' => 'Aktualisierungen per E-Mail abonnieren',
+        'global'           => 'Alles abonniert',
         'add'              => [
             'title'   => 'Einen neuen Abonnenten hinzufügen',
             'success' => 'Abonnent hinzugefügt.',
@@ -164,7 +165,7 @@ return [
         'team'        => 'Team',
         'member'      => 'Mitglied',
         'profile'     => 'Profil',
-        'description' => 'Teammitglieder werden die M&ouml;glichkeit haben, Komponente sowie Vorf&auml;lle hinzuzuf&uuml;gen und zu ver&auml;ndern.',
+        'description' => 'Teammitglieder werden die Möglichkeit haben, Komponente sowie Vorfälle hinzuzufügen und zu verändern.',
         'add'         => [
             'title'   => 'Neues Teammitglied hinzufügen',
             'success' => 'Teammitglied hinzugefügt.',

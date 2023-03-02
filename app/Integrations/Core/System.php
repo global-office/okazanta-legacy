@@ -84,6 +84,9 @@ class System implements SystemContract
             // If all our components are ok, do we have any non-fixed incidents?
             $incidents = Incident::orderBy('occurred_at', 'desc')->get()->filter(function ($incident) {
                 return $incident->status !== Incident::FIXED;
+            })->filter(function ($incident) {
+                if ($this->auth->check()) return true;
+                else return $incident->visible == true;
             });
             $incidentCount = $incidents->count();
             $unresolvedCount = $incidents->filter(function ($incident) {
