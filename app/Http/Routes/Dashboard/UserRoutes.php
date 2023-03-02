@@ -38,7 +38,7 @@ class UserRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['auth'],
+            'middleware' => 'admin',
             'namespace'  => 'Dashboard',
             'prefix'     => 'dashboard/user',
         ], function (Registrar $router) {

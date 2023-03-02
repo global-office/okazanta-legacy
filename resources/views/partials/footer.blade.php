@@ -16,7 +16,7 @@
             </div>
             <div class="col-sm-8">
                 <ul class="list-inline">
-                    @if($currentUser || $dashboardLink)
+                    @if(($currentUser && $currentUser->isAdmin) || $dashboardLink)
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route('dashboard') }}">{{ trans('dashboard.dashboard') }}</a>
                     </li>
@@ -24,6 +24,10 @@
                     @if($currentUser)
                     <li>
                         <a class="btn btn-link" href="{{ cachet_route('auth.logout') }}">{{ trans('dashboard.logout') }}</a>
+                    </li>
+                    @else
+                    <li>
+                        <a class="btn btn-link" href="{{ cachet_route('auth.login') }}">{{ trans('dashboard.login.login') }}</a>
                     </li>
                     @endif
                     @if($enableSubscribers)

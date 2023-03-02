@@ -38,7 +38,7 @@ class BaseRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['auth'],
+            'middleware' => 'admin',
             'namespace'  => 'Dashboard',
         ], function (Registrar $router) {
             $router->get('admin', 'DashboardController@redirectAdmin');

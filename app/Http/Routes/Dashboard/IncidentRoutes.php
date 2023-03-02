@@ -38,7 +38,7 @@ class IncidentRoutes
     public function map(Registrar $router)
     {
         $router->group([
-            'middleware' => ['auth'],
+            'middleware' => 'admin',
             'namespace'  => 'Dashboard',
             'prefix'     => 'dashboard/incidents',
         ], function (Registrar $router) {

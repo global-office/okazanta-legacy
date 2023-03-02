@@ -33,7 +33,7 @@
                 <div class="col-xs-10 col-xs-offset-2 col-sm-11 col-sm-offset-0">
                     <div class="panel panel-message incident">
                         <div class="panel-body">
-                            @if($currentUser)
+                            @if($currentUser && $currentUser->isAdmin)
                             <div class="pull-right btn-group">
                                 <a href="{{ cachet_route('dashboard.incidents.updates.edit', ['incident' => $incident, 'incident_update' => $update]) }}" class="btn btn-default">{{ trans('forms.edit') }}</a>
                             </div>

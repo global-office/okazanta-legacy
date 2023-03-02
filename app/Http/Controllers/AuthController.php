@@ -15,6 +15,7 @@ use CachetHQ\Cachet\Bus\Events\User\UserFailedTwoAuthEvent;
 use CachetHQ\Cachet\Bus\Events\User\UserLoggedInEvent;
 use CachetHQ\Cachet\Bus\Events\User\UserLoggedOutEvent;
 use CachetHQ\Cachet\Bus\Events\User\UserPassedTwoAuthEvent;
+use CachetHQ\Cachet\Models\User;
 use GrahamCampbell\Binput\Facades\Binput;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Arr;
@@ -65,8 +66,8 @@ class AuthController extends Controller
             Auth::attempt($loginData, $rememberUser);
 
             event(new UserLoggedInEvent(Auth::user()));
-
-            return Redirect::intended(cachet_route('dashboard'));
+            if (Auth::user()->level == User::LEVEL_ADMIN) return Redirect::intended(cachet_route('dashboard'));
+            else return Redirect::intended(cachet_route('status-page'));
         }
 
         return cachet_redirect('auth.login')
