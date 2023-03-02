@@ -18,7 +18,7 @@ return [
     'incidents' => [
         'title'                    => 'Vorfälle & Wartungsarbeiten',
         'incidents'                => 'Ereignisse',
-        'logged'                   => '{0}Es gibt keine Ereignisse, gute Arbeit.|[1]Du hast ein Ereignis gemeldet.|[2,*]Du hast <strong>:count</strong> Ereignisse gemeldet.',
+        'logged'                   => '{0}Es gibt keine Ereignisse, gute Arbeit.|[1]Bisher wurde ein Ereignis gemeldet.|[2,*]Es wurden <strong>:count</strong> Ereignisse gemeldet.',
         'incident-create-template' => 'Vorlage erstellen',
         'incident-templates'       => 'Ereignis Vorlagen',
         'updates'                  => [
@@ -35,7 +35,7 @@ return [
                 'failure' => 'Etwas ist mit dem Aktualisieren des Vorfall Updates schief gelaufen',
             ],
         ],
-        'reported_by'              => 'Reported :timestamp by :user',
+        'reported_by'              => 'Gemeldet :timestamp von :user',
         'add'                      => [
             'title'   => 'Ereignis hinzufügen',
             'success' => 'Ereignis hinzugefügt.',
@@ -75,7 +75,7 @@ return [
     // Incident Maintenance
     'schedule' => [
         'schedule'     => 'Wartungsarbeiten',
-        'logged'       => '{0}Es gibt keine geplanten Wartungen, gute Arbeit.|[1]Du hast einen Eintrag erstellt.|[2,*]Du hast <strong>:count</strong> Einträge erstellt.',
+        'logged'       => '{0}Es gibt keine geplanten Wartungen, gute Arbeit.|[1]Es wurde eine geplante Wartung erstellt.|[2,*]Es wurden <strong>:count</strong> geplante Wartungen erstellt.',
         'scheduled_at' => 'Geplant am :timestamp',
         'add'          => [
             'title'   => 'Wartungsarbeiten hinzufügen',
