@@ -55,9 +55,10 @@ return [
 
     // Service Status
     'service' => [
-        'good'  => '[0,1]System funktioniert|[2,*]Alle Systeme funktionieren.',
-        'bad'   => '[0,1]Das System hat momentan Probleme!|[2,*]Mehrere Systeme haben momentan Probleme!',
-        'major' => '[0,1]Das System hat ein schwerwiegendes Problem!|[2,*]Mehrere Systeme haben ein schwerwiegendes Problem!',
+        'good'        => '[0,1]System funktioniert|[2,*]Alle Systeme funktionieren.',
+        'bad'         => '[0,1]Ein System hat momentan Probleme!|[2,*]Mehrere Systeme haben momentan Probleme!',
+        'major'       => '[0,1]Ein System hat ein schwerwiegendes Problem!|[2,*]Mehrere Systeme haben ein schwerwiegendes Problem!',
+        'major_bad'   => '[0,1]Ein weiteres System hat momentan Probleme!|[2,*]Weitere Systeme haben momentan Probleme!',
     ],
 
     'api' => [

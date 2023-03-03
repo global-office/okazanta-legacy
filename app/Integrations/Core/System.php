@@ -63,21 +63,24 @@ class System implements SystemContract
         $includePrivate = $this->auth->check();
 
         $totalComponents = Component::enabled()->authenticated($includePrivate)->count();
+        $outageComponents = Component::enabled()->authenticated($includePrivate)->notStatus(1)->count();
         $majorOutages = Component::enabled()->authenticated($includePrivate)->status(4)->count();
         $majorOutageRate = (int) $this->config->get('setting.major_outage_rate', '50');
         $isMajorOutage = $totalComponents ? ($majorOutages / $totalComponents) * 100 >= $majorOutageRate : false;
 
         // Default data
         $status = [
-            'system_status'  => 'info',
-            'system_message' => trans_choice('cachet.service.bad', $totalComponents),
+            'system_status'  => 'warning',
+            'system_message' => trans_choice('cachet.service.bad', $outageComponents),
             'favicon'        => 'favicon-high-alert',
         ];
 
         if ($isMajorOutage) {
             $status = [
                 'system_status'  => 'danger',
-                'system_message' => trans_choice('cachet.service.major', $totalComponents),
+                'system_message' =>
+                    trans_choice('cachet.service.major', $majorOutages) .
+                    (($outageComponents-$majorOutages) > 0 ? trans_choice('cachet.service.major_bad', $outageComponents-$majorOutages) : ''),
                 'favicon'        => 'favicon-high-alert',
             ];
         } elseif (Component::enabled()->authenticated($includePrivate)->notStatus(1)->count() === 0) {
