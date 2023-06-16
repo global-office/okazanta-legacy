@@ -3,7 +3,8 @@
 
 {{ $content }}
 
-@lang('Thanks,')<br>
+{{ $description }}
+
 {{ Config::get('setting.app_name') }}
 
 @include('notifications.partials.subscription')

@@ -62,13 +62,13 @@ return [
     'schedule' => [
         'new' => [
             'mail' => [
-                'subject' => 'Neuer Zeitplan erstellt',
-                'content' => ':name wurde für :date geplant',
+                'subject' => 'Ankündigung - Geplante Wartung',
                 'title'   => 'Eine neue geplante Wartung wurde erstellt.',
+                'content' => ':name wurde für :date geplant.',
                 'action'  => 'Anzeigen',
             ],
             'slack' => [
-                'title'   => 'Neuer Zeitplan erstellt!',
+                'title'   => 'Ankündigung - Geplante Wartung!',
                 'content' => ':name wurde für :date geplant',
             ],
             'sms' => [
